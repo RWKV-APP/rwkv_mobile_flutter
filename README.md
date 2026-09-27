@@ -29,6 +29,11 @@ not follow an upstream `latest` tag.
 Run `python3 tools/fetch_native_libraries.py --verify-only` to verify all
 vendored libraries without downloading. Omit `--verify-only` to restore a
 changed file; repeat `--platform` to select individual manifest platforms.
+A platform may declare its own immutable archive source while other platforms
+retain the base native release. Android uses the 16 KB-aligned MTK NP7/NP9
+libraries already present at adapter commit `e03a68e`; its base runtime and all
+other platforms remain byte-identical to `4.8.0-native.4`. The archive records
+all installed-file sizes and hashes, so restoration retains the alignment fix.
 Windows and Linux packaging selects only the target architecture's libraries.
 Palm is bundled as the optional `palm` CPU backend for external `.mollm` files.
 

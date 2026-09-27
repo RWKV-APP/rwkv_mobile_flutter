@@ -8,8 +8,8 @@
   "mlxCommit": "34b276b9c774a8d6465e009382dae12f4e97b849",
   "platforms": {
     "android": {
-      "archive": "librwkv_mobile-205d484-aarch64-android-ndk-r25c.zip",
-      "sha256": "37372b0a90019c03e0c90c9385e264c79278f1ad32e77d397a7068a18dc73ae2",
+      "archive": "rwkv-android-16kb-e03a68e.zip",
+      "sha256": "8e34500e9046ab537e632b978948e10043f0d75debcb0eee7bd44669ab285773",
       "files": {
         "librwkv_mobile.so": {
           "path": "android/src/main/jniLibs/arm64-v8a/librwkv_mobile.so",
@@ -18,14 +18,19 @@
         },
         "librwkv_mtk_np7.so": {
           "path": "android/src/main/jniLibs/arm64-v8a/librwkv_mtk_np7.so",
-          "size": 1052480,
-          "sha256": "aaedfc773fea53e1f27df115f75d8f0011b4e41fdced3a4a9bb543ed82dd35bd"
+          "size": 1078744,
+          "sha256": "386e824585d607668ece3b1758a8081dd552d3e51cff9b3e7b87859e463b1ad4"
         },
         "librwkv_mtk_np9.so": {
           "path": "android/src/main/jniLibs/arm64-v8a/librwkv_mtk_np9.so",
-          "size": 1104480,
-          "sha256": "683d88035fac4ea5f0c4df71a0e95d52f1b3dadacc6ba2eeac9db7201abd08e9"
+          "size": 1130904,
+          "sha256": "24c7dee2e90bcf7c34dd320c23ff86cebc882f2727423c0698a5f6268be2d0fd"
         }
+      },
+      "source": {
+        "repository": "RWKV-APP/rwkv_mobile_flutter",
+        "tag": "4.8.2-android-16kb",
+        "commit": "e03a68e12bf80c4d4e883816347b1b7fd1df6c95"
       }
     },
     "ios": {

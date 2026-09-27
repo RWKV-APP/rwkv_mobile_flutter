@@ -34,24 +34,26 @@ def matches(path, info):
 
 
 def fetch(root, manifest, platforms, verify_only=False):
-    if not re.fullmatch(r'[\w.-]+/[\w.-]+', manifest['repository']):
-        raise ValueError('Invalid native repository')
-    if not re.fullmatch(r'[0-9a-f]{40}', manifest['commit']):
-        raise ValueError('A full native commit is required')
-    if manifest['tag'] in ('latest', 'master', 'main') or not manifest['tag']:
-        raise ValueError('A fixed native release tag is required')
     for platform in platforms:
         asset = manifest['platforms'][platform]
+        source = {key: manifest[key] for key in ('repository', 'tag', 'commit')}
+        source.update(asset.get('source', {}))
+        if not re.fullmatch(r'[\w.-]+/[\w.-]+', source['repository']):
+            raise ValueError('Invalid native repository')
+        if not re.fullmatch(r'[0-9a-f]{40}', source['commit']):
+            raise ValueError('A full native commit is required')
+        if source['tag'] in ('latest', 'master', 'main') or not source['tag']:
+            raise ValueError('A fixed native release tag is required')
         files = asset['files']
         if not files or not re.fullmatch(r'[0-9a-f]{64}', asset['sha256']):
             raise ValueError(f'Incomplete native manifest: {platform}')
         destinations = {member: target_path(root, info['path']) for member, info in files.items()}
         if all(matches(destinations[member], info) for member, info in files.items()):
-            print(f'{platform}: native files verified at {manifest["commit"]}')
+            print(f'{platform}: native files verified at {source["commit"]}')
             continue
         if verify_only:
             raise ValueError(f'{platform}: native files differ from the pinned release; run the fetch script')
-        url = f'https://github.com/{manifest["repository"]}/releases/download/{quote(manifest["tag"], safe="")}/{quote(asset["archive"], safe="")}'
+        url = f'https://github.com/{source["repository"]}/releases/download/{quote(source["tag"], safe="")}/{quote(asset["archive"], safe="")}'
         with tempfile.TemporaryDirectory(prefix='rwkv-native-') as temporary:
             archive_path = Path(temporary) / 'native.zip'
             print(f'{platform}: downloading {asset["archive"]}', flush=True)

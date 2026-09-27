@@ -25,6 +25,13 @@ def main():
         with patch('fetch_native_libraries.urlopen', side_effect=AssertionError('verification must not use the network')):
             fetch(root, manifest, ['windows-x64'], verify_only=True)
         destination = root / info['path']
+        manifest['platforms']['windows-x64']['source'] = {
+            'repository': 'RWKV-APP/rwkv_mobile_flutter', 'tag': '4.8.2-android-16kb', 'commit': 'b' * 40}
+        destination.write_bytes(b'old')
+        with patch('fetch_native_libraries.urlopen', return_value=io.BytesIO(archive_bytes)) as request:
+            fetch(root, manifest, ['windows-x64'])
+            assert request.call_args.args[0].full_url == (
+                'https://github.com/RWKV-APP/rwkv_mobile_flutter/releases/download/4.8.2-android-16kb/native.zip')
         destination.write_bytes(b'old')
         with patch('fetch_native_libraries.urlopen', return_value=io.BytesIO(b'corrupt archive')):
             try:
