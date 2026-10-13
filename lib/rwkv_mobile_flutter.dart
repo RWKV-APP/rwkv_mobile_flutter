@@ -645,6 +645,7 @@ class RWKVMobile {
             case Backend.ncnn:
             case Backend.mnn:
             case Backend.mlx:
+            case Backend.coreai:
             case Backend.mtkNeuropilot7:
             case Backend.mtkNeuropilot9:
             case Backend.palm:
