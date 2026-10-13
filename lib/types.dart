@@ -50,7 +50,10 @@ enum Backend {
   mtkNeuropilot9,
 
   /// Bundled Palm-Infra CPU backend using a downloaded .mollm model package
-  palm;
+  palm,
+
+  /// Experimental Apple Core AI, available with the optional macOS 27 backend.
+  coreai;
 
   String get asArgument => switch (this) {
     Backend.ncnn => 'ncnn',
@@ -63,6 +66,7 @@ enum Backend {
     Backend.mtkNeuropilot7 => 'mtk_np7',
     Backend.mtkNeuropilot9 => 'mtk_np9',
     Backend.palm => 'palm',
+    Backend.coreai => 'coreai',
   };
 
   static Backend fromString(String value) {
@@ -77,6 +81,7 @@ enum Backend {
     if (toLower.contains('mtk_np7')) return Backend.mtkNeuropilot7;
     if (toLower.contains('mtk_np9')) return Backend.mtkNeuropilot9;
     if (toLower == 'palm') return Backend.palm;
+    if (toLower == 'coreai') return Backend.coreai;
     throw Exception('Unknown backend: $value');
   }
 }
