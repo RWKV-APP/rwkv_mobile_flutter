@@ -176,7 +176,7 @@ Backend, представленные в Dart:
 
 ## 📦 Встроенные нативные библиотеки
 
-В этом репозитории уже есть предсобранные артефакты для поддерживаемых платформ, например:
+Нативные библиотеки — зависимости сборки с версией и SHA-256, закреплёнными в `native-libraries.json`. Новые результаты компиляции не добавляются в Git. После первого получения исходников или обновления версии перед сборкой выполните `python3 tools/fetch_native_libraries.py --platform <platform>`. Допустимые платформы: `android`, `ios`, `macos`, `windows-x64`, `windows-arm64`, `linux-x64`, `linux-arm64`. Примеры путей восстановленных файлов:
 
 - Android: `android/src/main/jniLibs/arm64-v8a/librwkv_mobile.so`
 - iOS: `ios/librwkv_mobile.a`
@@ -194,7 +194,7 @@ Backend, представленные в Dart:
 Invalid argument(s): Failed to lookup symbol 'xxx': undefined symbol: xxx
 ```
 
-скорее всего, встроенные native libraries рассинхронизировались с текущими FFI binding или нижележащей сборкой engine. Обновите их из последнего release `rwkv-mobile`:
+скорее всего, встроенные native libraries рассинхронизировались с текущими FFI binding или нижележащей сборкой engine. Восстановите версию, закреплённую в `native-libraries.json`:
 
 - Windows:
 
@@ -208,7 +208,7 @@ Invalid argument(s): Failed to lookup symbol 'xxx': undefined symbol: xxx
 ./fetch_latest_libraries.sh
 ```
 
-Эти скрипты скачивают последние платформенные архивы из release `rwkv-mobile` и копируют распакованные артефакты в текущий репозиторий плагина.
+Скрипты получают только закреплённые в манифесте архивы и проверяют SHA-256 архивов и файлов перед заменой локальных библиотек. Изменяемый latest не используется.
 
 ## 💻 Совместная разработка с RWKV_APP
 

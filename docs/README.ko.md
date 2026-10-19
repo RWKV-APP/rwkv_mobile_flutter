@@ -176,7 +176,7 @@ Dart 계층에서 표현되는 backend:
 
 ## 📦 포함된 네이티브 라이브러리
 
-이 저장소에는 여러 플랫폼용 사전 빌드 결과물이 포함되어 있습니다. 예:
+네이티브 라이브러리는 `native-libraries.json`에서 버전과 SHA-256을 고정한 빌드 의존성입니다. 새 빌드 결과물은 Git에 커밋하지 않습니다. 처음 체크아웃하거나 버전을 업데이트한 뒤에는 빌드 전에 `python3 tools/fetch_native_libraries.py --platform <platform>`을 실행하세요. 플랫폼 이름은 `android`, `ios`, `macos`, `windows-x64`, `windows-arm64`, `linux-x64`, `linux-arm64`입니다. 복원되는 파일의 예:
 
 - Android: `android/src/main/jniLibs/arm64-v8a/librwkv_mobile.so`
 - iOS: `ios/librwkv_mobile.a`
@@ -194,7 +194,7 @@ Dart 계층에서 표현되는 backend:
 Invalid argument(s): Failed to lookup symbol 'xxx': undefined symbol: xxx
 ```
 
-포함된 native libraries가 현재 FFI binding 또는 하위 engine build와 맞지 않을 가능성이 큽니다. 최신 `rwkv-mobile` release에서 다시 가져오세요.
+포함된 native libraries가 현재 FFI binding 또는 하위 engine build와 맞지 않을 가능성이 큽니다. `native-libraries.json`에 고정된 버전을 복원하세요.
 
 - Windows:
 
@@ -208,7 +208,7 @@ Invalid argument(s): Failed to lookup symbol 'xxx': undefined symbol: xxx
 ./fetch_latest_libraries.sh
 ```
 
-이 스크립트들은 `rwkv-mobile` release에서 플랫폼별 아카이브를 내려받고, 압축을 푼 결과물을 이 플러그인 저장소로 복사합니다.
+이 스크립트들은 매니페스트에 고정된 아카이브만 가져오며, 아카이브와 각 파일의 SHA-256을 검증한 후 로컬 라이브러리를 교체합니다. 변경 가능한 latest는 사용하지 않습니다.
 
 ## 💻 RWKV_APP와 함께 개발하기
 

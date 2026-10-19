@@ -38,3 +38,21 @@ lib/l10n/intl_en.arb
 android/.gradle/
 example/sentry-wizard
 example/fastlane/README.md
+
+# Restore generated native dependencies from native-libraries.json.
+/android/src/main/jniLibs/arm64-v8a/librwkv_mobile.so
+/android/src/main/jniLibs/arm64-v8a/librwkv_mtk_np7.so
+/android/src/main/jniLibs/arm64-v8a/librwkv_mtk_np9.so
+/ios/libMLXModelFFI.a
+/ios/libncnn.a
+/ios/librwkv_mobile.a
+/ios/mlx-swift_Cmlx.bundle/default.metallib
+/linux/librwkv_mobile-linux-aarch64.so
+/linux/librwkv_mobile-linux-x86_64.so
+/macos/librwkv_mobile.dylib
+/macos/mlx-swift_Cmlx.bundle/Contents/Info.plist
+/macos/mlx-swift_Cmlx.bundle/Contents/Resources/default.metallib
+/windows/arm64/libomp.dll
+/windows/libomp.dll
+/windows/rwkv_mobile-arm64.dll
+/windows/rwkv_mobile.dll

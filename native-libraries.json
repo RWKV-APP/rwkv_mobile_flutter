@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
   "repository": "RWKV-APP/rwkv-mobile",
-  "tag": "4.8.5-native.cpu-macos.1",
-  "commit": "5e4a2f1e9e89eab21b595e65c591f18d0b1a9967",
-  "palmCommit": "3da00340257369c686dd30f7077cf2e5a9293e6c",
-  "mlxCommit": "34b276b9c774a8d6465e009382dae12f4e97b849",
+  "tag": "4.8.6-native.1",
+  "commit": "4a459879525edf7948e0624b69448983f432d725",
+  "palmCommit": "a03fcf7a46ab334ada5b8b32bad83e03a1306cb2",
+  "mlxCommit": "2b40a7df9f189ceccf08086e0d0a068a97a83fa9",
   "platforms": {
     "android": {
-      "archive": "librwkv_mobile-4ad00a1-aarch64-android-ndk-r28c.zip",
-      "sha256": "91a0f4ac878fbf3c3043051ddf59667dd3106feaeab8e9bc8cb72a72c4d362ed",
+      "archive": "librwkv_mobile-4a45987-aarch64-android-ndk-r28c.zip",
+      "sha256": "de76869a12d99380c49c5f6c0623ffd7247a6a961efa14670e54f05d07f59689",
       "files": {
         "librwkv_mobile.so": {
           "path": "android/src/main/jniLibs/arm64-v8a/librwkv_mobile.so",
-          "size": 35432008,
-          "sha256": "3857b9ac2993dc34aa6ded3bd62468112df62f8973cb4a6c82eec8edd77be0fc"
+          "size": 35531592,
+          "sha256": "595b57d409a18a24bda0203ea53cd8f78ffe6b676f01e6145c1b0c97039a21a6"
         },
         "librwkv_mtk_np7.so": {
           "path": "android/src/main/jniLibs/arm64-v8a/librwkv_mtk_np7.so",
@@ -28,113 +28,109 @@
       },
       "source": {
         "repository": "RWKV-APP/rwkv-mobile",
-        "tag": "4.8.4-native.1",
-        "commit": "4ad00a1cd62101c095832377ba838d4a2cb82c80",
-        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/36738065413",
-        "palmCommit": "a03fcf7a46ab334ada5b8b32bad83e03a1306cb2"
+        "tag": "4.8.6-native.1",
+        "commit": "4a459879525edf7948e0624b69448983f432d725",
+        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/39296519853"
       }
     },
     "ios": {
-      "archive": "librwkv_mobile-mlx-compile-reuse-ios-arm64.zip",
-      "sha256": "7981e8cc1312df30f1b0aff64def0677e3528864ac73381ecbcb729f0fabf09d",
+      "archive": "librwkv_mobile-4a45987-ios-static.zip",
+      "sha256": "22831e23c249f0a3e80913cfe9c5250832c45159cca44ba142eede53292593bd",
       "files": {
-        "default.metallib": {
-          "path": "ios/mlx-swift_Cmlx.bundle/default.metallib",
-          "size": 2915740,
-          "sha256": "97936461ed309403a5f2a51ec9f1effe7cfbe2876941066e16bdb5351c2a381a"
-        },
         "libMLXModelFFI.a": {
           "path": "ios/libMLXModelFFI.a",
-          "size": 39296384,
-          "sha256": "ca1f77ebc2133e9cdf7c3bcd005de196d73dd473a536f2136ceccd6f82497d02"
+          "size": 37593864,
+          "sha256": "57bc1214862292bc89a3fadb5f968f35f354ea1c7f6a807c9837844f90892f26"
         },
         "libncnn.a": {
           "path": "ios/libncnn.a",
           "size": 4772776,
-          "sha256": "06ab925099d1798ba3a86576205d39619bf8203a205420c626f12f7f8c811994"
+          "sha256": "11da12f2b04c7c6ad0be8337ccc58c6596794eef5a572157a89773144375946c"
         },
         "librwkv_mobile.a": {
           "path": "ios/librwkv_mobile.a",
-          "size": 65656704,
-          "sha256": "e50bd29e8720847d98793c81af1bc0b1e3e97f4d42a425068ba5f55bd41fd25b"
+          "size": 65722200,
+          "sha256": "f1f00f7445619a6decd138e0dba230a61109a52062e929f13f9b5d7b3e1c1359"
+        },
+        "default.metallib": {
+          "path": "ios/mlx-swift_Cmlx.bundle/default.metallib",
+          "size": 2900572,
+          "sha256": "4caf9f5d548af28fbf3b9413c3343a13ee56222ee64518ce409414cbdb228120"
         }
       },
-      "mlxCommit": "34b276b9c774a8d6465e009382dae12f4e97b849",
-      "mlxPatchSha256": "444fb6f1e2ee528ac421032b8eb00d0ad09fd81c0eca046b3bdec2eac6aec901",
       "source": {
         "repository": "RWKV-APP/rwkv-mobile",
-        "tag": "4.8.5-native.mlx.1",
-        "commit": "64c2cad0fa7f550d3ef6f76499f3a304f4fd9bdb"
+        "tag": "4.8.6-native.1",
+        "commit": "4a459879525edf7948e0624b69448983f432d725",
+        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/39296519853"
       },
-      "engineBaselineCommit": "205d4848f2b769efe4a1df268e1cdf6548158b5d"
+      "mlxCommit": "2b40a7df9f189ceccf08086e0d0a068a97a83fa9"
     },
     "macos": {
-      "archive": "librwkv_mobile-5e4a2f1-macos-arm64.zip",
-      "sha256": "db100b081f9b451b5473d41dad50e8d4521ac4c4e235b93ba71aed350defd70b",
+      "archive": "librwkv_mobile-4a45987-macos-aarch64.zip",
+      "sha256": "8d67b6e186b1a349bbb278cbd42699b781d33eff23708ca389234322d1e033c7",
       "files": {
         "librwkv_mobile.dylib": {
           "path": "macos/librwkv_mobile.dylib",
-          "size": 43257400,
-          "sha256": "8325898bb088f50be65f3718218607a24bdbc0e55105255536b55de9035c2a97"
+          "size": 42373208,
+          "sha256": "adc798b7ee86e985488f029dd7bcef5c5352a51410084b00e97ccfbcacfb8dcd"
         },
         "mlx-swift_Cmlx.bundle/Contents/Info.plist": {
           "path": "macos/mlx-swift_Cmlx.bundle/Contents/Info.plist",
-          "size": 1124,
-          "sha256": "fb07a5c70e7b69757ccb0e0d3ac56c7dcf75f381625fab8df96d4ac2404a562e"
+          "size": 1119,
+          "sha256": "7f317127d20a8d332a516e2f91230b83acff3b5c8fe36dbc3dfbafb048417361"
         },
         "mlx-swift_Cmlx.bundle/Contents/Resources/default.metallib": {
           "path": "macos/mlx-swift_Cmlx.bundle/Contents/Resources/default.metallib",
-          "size": 2918284,
-          "sha256": "f900edd44ffa33e9c3807852092c67432dfb8c942b0d5a356b5ab872a048c3dd"
+          "size": 2902796,
+          "sha256": "7fec3dfb951564f9862bbabfaaec485cf71ab08ee75c395d4200746236ee5c8e"
         }
       },
-      "mlxCommit": "34b276b9c774a8d6465e009382dae12f4e97b849",
-      "mlxPatchSha256": "444fb6f1e2ee528ac421032b8eb00d0ad09fd81c0eca046b3bdec2eac6aec901",
       "source": {
         "repository": "RWKV-APP/rwkv-mobile",
-        "tag": "4.8.5-native.cpu-macos.1",
-        "commit": "5e4a2f1e9e89eab21b595e65c591f18d0b1a9967"
+        "tag": "4.8.6-native.1",
+        "commit": "4a459879525edf7948e0624b69448983f432d725",
+        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/39296519853"
       },
-      "engineBaselineCommit": "64c2cad0fa7f550d3ef6f76499f3a304f4fd9bdb"
+      "mlxCommit": "2b40a7df9f189ceccf08086e0d0a068a97a83fa9"
     },
     "linux-x64": {
-      "archive": "librwkv_mobile-c99ff9b-linux-x86_64.zip",
-      "sha256": "30e4da3afb2f5869d986091c708946b545a682641f39950481ef98a3ae7ab5fe",
+      "archive": "librwkv_mobile-4a45987-linux-x86_64.zip",
+      "sha256": "6c62417cf3433f4a4bf938a959380027fd7cdb9d27e561c03dacb662a2bf67b9",
       "files": {
         "librwkv_mobile-linux-x86_64.so": {
           "path": "linux/librwkv_mobile-linux-x86_64.so",
-          "size": 88413512,
-          "sha256": "33b0721bb1c74a045764dd73a01d2d2f84c4b3bf008b6c8b206e31e0ff7592bd"
+          "size": 88429896,
+          "sha256": "58b3ea57602392756ff1572cdb23c8b8c89103db624eddec0329bc31ffdde8ba"
         }
       },
       "source": {
         "repository": "RWKV-APP/rwkv-mobile",
-        "tag": "4.8.5-native.cpu-desktop.1",
-        "commit": "c99ff9bb4007110a0b575e4443282f316e5c999e",
-        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/38573019019",
-        "palmCommit": "a03fcf7a46ab334ada5b8b32bad83e03a1306cb2"
-      },
-      "engineBaselineCommit": "4ad00a1cd62101c095832377ba838d4a2cb82c80"
+        "tag": "4.8.6-native.1",
+        "commit": "4a459879525edf7948e0624b69448983f432d725",
+        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/39296519853"
+      }
     },
     "linux-arm64": {
-      "archive": "librwkv_mobile-205d484-linux-aarch64.zip",
-      "sha256": "47a095e3db4a1568f3c280443a472dbd65b86be2a394a9fe39212ca19ce4dad7",
+      "archive": "librwkv_mobile-4a45987-linux-aarch64.zip",
+      "sha256": "dfe118280347f741aa125d2c57dc228ecb3369d96039351fc568f7fd907ffab6",
       "files": {
         "librwkv_mobile-linux-aarch64.so": {
           "path": "linux/librwkv_mobile-linux-aarch64.so",
-          "size": 30558664,
-          "sha256": "d2202b0b023d195ed4332d45e08da802841a3ed885984529edb3eae30a1a6589"
+          "size": 30628744,
+          "sha256": "8fa062e33be2b37f14d367928c74e8a2b49310ac7520ef1ce21c318e9f13dc65"
         }
       },
       "source": {
         "repository": "RWKV-APP/rwkv-mobile",
-        "tag": "4.8.0-native.4",
-        "commit": "205d4848f2b769efe4a1df268e1cdf6548158b5d"
+        "tag": "4.8.6-native.1",
+        "commit": "4a459879525edf7948e0624b69448983f432d725",
+        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/39296519853"
       }
     },
     "windows-x64": {
-      "archive": "librwkv_mobile-c99ff9b-windows-x64.zip",
-      "sha256": "a5c68e4174f73919f3c2acbb5be7538d4a4165ca3d6eca1be2348b37474e4e95",
+      "archive": "librwkv_mobile-4a45987-windows-x64.zip",
+      "sha256": "8652f460dac99e0c08438a350b17eb02c8b05140ae7e29e4b145b994b97e7fe2",
       "files": {
         "Release/libomp.dll": {
           "path": "windows/libomp.dll",
@@ -143,22 +139,20 @@
         },
         "Release/rwkv_mobile.dll": {
           "path": "windows/rwkv_mobile.dll",
-          "size": 102799360,
-          "sha256": "4f0a2a1427a939bcd385e5eb45a6dd2382d7cebfd5b798a22e38bb916616ae04"
+          "size": 102965248,
+          "sha256": "71dc96c035981a221699c8055b9bd142b36b4a7eafb03408aba2daced4e28e2e"
         }
       },
       "source": {
         "repository": "RWKV-APP/rwkv-mobile",
-        "tag": "4.8.5-native.cpu-desktop.1",
-        "commit": "c99ff9bb4007110a0b575e4443282f316e5c999e",
-        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/38573019019",
-        "palmCommit": "a03fcf7a46ab334ada5b8b32bad83e03a1306cb2"
-      },
-      "engineBaselineCommit": "4ad00a1cd62101c095832377ba838d4a2cb82c80"
+        "tag": "4.8.6-native.1",
+        "commit": "4a459879525edf7948e0624b69448983f432d725",
+        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/39296519853"
+      }
     },
     "windows-arm64": {
-      "archive": "librwkv_mobile-4ad00a1-windows-arm64.zip",
-      "sha256": "7e4c33d56244181df823bef91871efdb3c3d4d5af939e7639e0b783de9c19432",
+      "archive": "librwkv_mobile-4a45987-windows-arm64.zip",
+      "sha256": "97ede68b789db90b0f4477770131a052f28f76e62a60dd228cd02c72b9ecf581",
       "files": {
         "Release/libomp.dll": {
           "path": "windows/arm64/libomp.dll",
@@ -167,19 +161,16 @@
         },
         "Release/rwkv_mobile-arm64.dll": {
           "path": "windows/rwkv_mobile-arm64.dll",
-          "size": 15942656,
-          "sha256": "ace96bf23668979972bae1ae0ded5d715ec32178b2f6e077006a01858f9bc401"
+          "size": 15955456,
+          "sha256": "1a943e920e88faa536c65fe1b2dee2a67d994fc5ffc46c6d6167e59ac71861cb"
         }
       },
       "source": {
         "repository": "RWKV-APP/rwkv-mobile",
-        "tag": "4.8.4-native.1",
-        "commit": "4ad00a1cd62101c095832377ba838d4a2cb82c80",
-        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/36738065413",
-        "palmCommit": "a03fcf7a46ab334ada5b8b32bad83e03a1306cb2"
+        "tag": "4.8.6-native.1",
+        "commit": "4a459879525edf7948e0624b69448983f432d725",
+        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/39296519853"
       }
     }
-  },
-  "engineBaselineCommit": "205d4848f2b769efe4a1df268e1cdf6548158b5d",
-  "mlxPatchSha256": "444fb6f1e2ee528ac421032b8eb00d0ad09fd81c0eca046b3bdec2eac6aec901"
+  }
 }

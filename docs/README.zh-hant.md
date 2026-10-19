@@ -176,7 +176,7 @@ Dart 層目前已表示的 backend 包括：
 
 ## 📦 已打包的原生庫
 
-這個倉庫已經包含了多平台的預編譯產物，例如：
+原生庫是由 `native-libraries.json` 固定版本與 SHA-256 的建置依賴，不再將新編譯產物提交至 Git。首次檢出或更新版本後，建置前執行 `python3 tools/fetch_native_libraries.py --platform <platform>`，平台名稱使用 `android`、`ios`、`macos`、`windows-x64`、`windows-arm64`、`linux-x64` 或 `linux-arm64`。還原後的檔案位於以下路徑：
 
 - Android：`android/src/main/jniLibs/arm64-v8a/librwkv_mobile.so`
 - iOS：`ios/librwkv_mobile.a`
@@ -194,7 +194,7 @@ Dart 層目前已表示的 backend 包括：
 Invalid argument(s): Failed to lookup symbol 'xxx': undefined symbol: xxx
 ```
 
-通常代表倉庫內打包的 native libraries 與當前 FFI binding 或底層 engine build 不一致。可以從最新的 `rwkv-mobile` release 刷新這些庫：
+通常代表倉庫內打包的 native libraries 與當前 FFI binding 或底層 engine build 不一致。請依 `native-libraries.json` 固定的版本還原：
 
 - Windows：
 
@@ -208,7 +208,7 @@ Invalid argument(s): Failed to lookup symbol 'xxx': undefined symbol: xxx
 ./fetch_latest_libraries.sh
 ```
 
-這些腳本會從 `rwkv-mobile` 的 release 下載最新平台壓縮包，並把解壓後的產物複製到目前外掛倉庫中。
+這些腳本僅還原清單固定的平台壓縮包，驗證壓縮包與檔案的 SHA-256 後才替換本機函式庫，不會跟隨可變的 latest。
 
 ## 💻 與 RWKV_APP 聯調開發
 

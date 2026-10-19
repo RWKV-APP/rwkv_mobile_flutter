@@ -26,21 +26,16 @@ release tag, archive checksums and installed-file checksums. The legacy-named
 `fetch_latest_libraries.sh` and `.ps1` now restore that exact release. They do
 not follow an upstream `latest` tag.
 
-Run `python3 tools/fetch_native_libraries.py --verify-only` to verify all
-vendored libraries without downloading. Omit `--verify-only` to restore a
-changed file; repeat `--platform` to select individual manifest platforms.
-A platform may declare its own immutable archive source while other platforms
-retain the base native release. Android, Windows x64/ARM64 and Linux x64 use
-`4.8.4-native.1`, with the Android ggml pthread loading fix, desktop CPU
-improvements and WebRWKV Adreno/Mali compatibility and generation improvements.
-Android retains the Dimensity 9500 NP9 optimization, compatible runtime API
-and 16 KB alignment. Before a platform build, restore its pinned archive with
-`python3 tools/fetch_native_libraries.py --platform <platform>`. The existing
-NP9 SDK adapter remains unchanged; Apple and Linux ARM64 consumers retain
-`4.8.0-native.4` bytes.
-The archive records installed-file sizes and hashes for reproducible restoration.
-Windows and Linux packaging selects only the target architecture's libraries.
-Palm is bundled as the optional `palm` CPU backend for external `.mollm` files.
+Native libraries are generated build dependencies restored from the immutable
+archives in this manifest; newly compiled binaries are not committed to Git.
+Before a local platform build, run
+`python3 tools/fetch_native_libraries.py --platform <platform>`.
+Choose `android`, `ios`, `macos`, `windows-x64`, `windows-arm64`, `linux-x64`
+or `linux-arm64`. Repeat `--platform` to select multiple platforms, or omit it
+to restore the complete matrix. Add `--verify-only` for an offline size and
+SHA-256 check. Release CI restores its selected platform before building.
+Existing NP9 vendor SDK adapters remain unchanged. Palm remains the optional
+CPU backend for external `.mollm` files.
 
 ## ✨ Core Features
 
@@ -202,7 +197,7 @@ Actual availability depends on the bundled native binaries you ship for each pla
 
 ## 📦 Bundled Native Libraries
 
-This repository includes prebuilt native artifacts for supported platforms, for example:
+The pinned native archives restore the following platform dependencies, for example:
 
 - Android: `android/src/main/jniLibs/arm64-v8a/librwkv_mobile.so`
 - iOS: `ios/librwkv_mobile.a`
@@ -234,7 +229,7 @@ the bundled native libraries may be out of sync with the generated FFI bindings 
 ./fetch_latest_libraries.sh
 ```
 
-These scripts fetch the pinned platform archives and verify their SHA-256 hashes before replacing local libraries. To update the native version, update the manifest and matching binaries together.
+These scripts fetch the pinned platform archives and verify their SHA-256 hashes before replacing local libraries. To update the native version, verify the immutable archive and member checksums, update the manifest, then restore the selected platform before building.
 
 ## 💻 Develop With RWKV_APP
 
