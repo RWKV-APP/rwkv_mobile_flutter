@@ -37,6 +37,21 @@ SHA-256 check. Release CI restores its selected platform before building.
 Existing NP9 vendor SDK adapters remain unchanged. Palm remains the optional
 CPU backend for external `.mollm` files.
 
+For an unpublished local build, the ignored `native-libraries.local.json` can
+override selected `platforms` with a `localArchive` ZIP path, its `sha256`, and
+the same `files` names and destination paths as the pinned platform. Its `source`
+records the full `baseCommit` and `snapshotSha256` of the source inventory used
+to build that archive. The normal fetch and offline verification commands use
+this selection; archive and member checksums are checked before installation.
+Flutter then packages the installed libraries from their normal platform paths.
+Keep the archive and source inventory while this checkout consumes the build.
+Remove the local selection to restore the immutable release with the same tool.
+Windows x64 local builds may additionally declare `Release/cublas64_13.dll`,
+`Release/cublasLt64_13.dll` and `Release/cudart64_13.dll` under `windows/`.
+The fetch tool generates the ignored `windows/native-runtime-libraries.txt`
+from the selected cohort. Standard Flutter packaging consumes this list, so
+restoring the pinned release also restores its runtime bundle selection.
+
 ## ✨ Core Features
 
 - **Cross-platform Flutter FFI plugin:** Android, iOS, macOS, Windows, and Linux.

@@ -40,6 +40,7 @@ example/sentry-wizard
 example/fastlane/README.md
 
 # Restore generated native dependencies from native-libraries.json.
+/native-libraries.local.json
 /android/src/main/jniLibs/arm64-v8a/librwkv_mobile.so
 /android/src/main/jniLibs/arm64-v8a/librwkv_mtk_np7.so
 /android/src/main/jniLibs/arm64-v8a/librwkv_mtk_np9.so
@@ -54,5 +55,9 @@ example/fastlane/README.md
 /macos/mlx-swift_Cmlx.bundle/Contents/Resources/default.metallib
 /windows/arm64/libomp.dll
 /windows/libomp.dll
+/windows/cublas64_13.dll
+/windows/cublasLt64_13.dll
+/windows/cudart64_13.dll
+/windows/native-runtime-libraries.txt
 /windows/rwkv_mobile-arm64.dll
 /windows/rwkv_mobile.dll
