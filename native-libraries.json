@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "repository": "RWKV-APP/rwkv-mobile",
-  "tag": "4.8.6-native.1",
-  "commit": "4a459879525edf7948e0624b69448983f432d725",
+  "tag": "4.8.6-native.2",
+  "commit": "7683ac9bf34b06b59521ffcf8059f4776f91577f",
   "palmCommit": "a03fcf7a46ab334ada5b8b32bad83e03a1306cb2",
-  "mlxCommit": "2b40a7df9f189ceccf08086e0d0a068a97a83fa9",
+  "mlxCommit": "bac606b67b6928206f013a38e1f87962455b2052",
   "platforms": {
     "android": {
       "archive": "librwkv_mobile-4a45987-aarch64-android-ndk-r28c.zip",
@@ -67,13 +67,13 @@
       "mlxCommit": "2b40a7df9f189ceccf08086e0d0a068a97a83fa9"
     },
     "macos": {
-      "archive": "librwkv_mobile-4a45987-macos-aarch64.zip",
-      "sha256": "8d67b6e186b1a349bbb278cbd42699b781d33eff23708ca389234322d1e033c7",
+      "archive": "librwkv_mobile-38f03f7-macos-aarch64.zip",
+      "sha256": "12de1536cb3c1a18ad0bd23d325464f7d4be87e2b5d7d82f2a95b7a7429e7121",
       "files": {
         "librwkv_mobile.dylib": {
           "path": "macos/librwkv_mobile.dylib",
-          "size": 42373208,
-          "sha256": "adc798b7ee86e985488f029dd7bcef5c5352a51410084b00e97ccfbcacfb8dcd"
+          "size": 42389832,
+          "sha256": "3ab075f3d40cbc7ec26f786a2c3e00aa288225504852a84239772a5bc5e8b0f7"
         },
         "mlx-swift_Cmlx.bundle/Contents/Info.plist": {
           "path": "macos/mlx-swift_Cmlx.bundle/Contents/Info.plist",
@@ -88,11 +88,11 @@
       },
       "source": {
         "repository": "RWKV-APP/rwkv-mobile",
-        "tag": "4.8.6-native.1",
-        "commit": "4a459879525edf7948e0624b69448983f432d725",
-        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/39296519853"
+        "tag": "4.8.6-native.2",
+        "commit": "38f03f77fc9706825bcebbaf33c44558ca267168",
+        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/40162440119"
       },
-      "mlxCommit": "2b40a7df9f189ceccf08086e0d0a068a97a83fa9"
+      "mlxCommit": "bac606b67b6928206f013a38e1f87962455b2052"
     },
     "linux-x64": {
       "archive": "librwkv_mobile-4a45987-linux-x86_64.zip",
@@ -129,25 +129,45 @@
       }
     },
     "windows-x64": {
-      "archive": "librwkv_mobile-4a45987-windows-x64.zip",
-      "sha256": "8652f460dac99e0c08438a350b17eb02c8b05140ae7e29e4b145b994b97e7fe2",
+      "archive": "librwkv_mobile-7683ac9-windows-x64.zip",
+      "sha256": "6581bb1272cbe23d9c82ff9b050296f2a624252d4c772890e55326bdbe6d610b",
       "files": {
-        "Release/libomp.dll": {
-          "path": "windows/libomp.dll",
-          "size": 768000,
-          "sha256": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c"
-        },
         "Release/rwkv_mobile.dll": {
           "path": "windows/rwkv_mobile.dll",
-          "size": 102965248,
-          "sha256": "71dc96c035981a221699c8055b9bd142b36b4a7eafb03408aba2daced4e28e2e"
+          "size": 177143808,
+          "sha256": "e5392dbcb60212aaa27cc80aefef978c5bd87909a4abc6595036d330b857b96c"
+        },
+        "Release/libomp.dll": {
+          "path": "windows/libomp.dll",
+          "size": 856064,
+          "sha256": "1e4222f195d84e7355109d778e751dfe3c085e42c947f7fe3d7853181329dd40"
+        },
+        "Release/cudart64_13.dll": {
+          "path": "windows/cudart64_13.dll",
+          "size": 551024,
+          "sha256": "d26fd1c2629594759af569a5252f94e4568d4ebeca67dc323834deb141aa278a"
+        },
+        "Release/cublas64_13.dll": {
+          "path": "windows/cublas64_13.dll",
+          "size": 54873200,
+          "sha256": "60bbba8868290311e9c1657b2193ddec667744eb555ff843f87acb7c039f9efa"
+        },
+        "Release/cublasLt64_13.dll": {
+          "path": "windows/cublasLt64_13.dll",
+          "size": 493474416,
+          "sha256": "cad63434448e7141629e240ea093ad596a7ef6a0f67b468ba9bc1df6e1eeee33"
         }
       },
       "source": {
         "repository": "RWKV-APP/rwkv-mobile",
-        "tag": "4.8.6-native.1",
-        "commit": "4a459879525edf7948e0624b69448983f432d725",
-        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/39296519853"
+        "tag": "4.8.6-native.2",
+        "commit": "7683ac9bf34b06b59521ffcf8059f4776f91577f",
+        "build": "Clean full-feature CMake RelWithDebInfo; CUDA 13.4.3, static GGML and Vulkan",
+        "cudaArchitectures": [
+          "sm_75",
+          "compute_75",
+          "sm_89"
+        ]
       }
     },
     "windows-arm64": {

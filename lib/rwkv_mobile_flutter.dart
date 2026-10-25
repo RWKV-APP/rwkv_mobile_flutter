@@ -637,6 +637,7 @@ class RWKVMobile {
 
         // 🟥 LoadRWKVModel
         case LoadRWKVModel req:
+          final loadTimer = Stopwatch()..start();
           String modelPath = req.modelPath;
           final modelBackendString = req.backend.asArgument;
           final backend = req.backend;
@@ -760,6 +761,8 @@ modelID: $modelID''';
             sendPort.send(LoadModelSteps(info: error, req: req, status: LoadingStatus.failedInLoading));
             break;
           }
+          loadTimer.stop();
+          print('[RWKVModelLoadTiming] backend=$modelBackendString model_id=$modelID elapsed_us=${loadTimer.elapsedMicroseconds}');
           sendPort.send(LoadModelSteps(modelID: modelID, req: req, status: LoadingStatus.loaded));
 
         // 🟥 stop

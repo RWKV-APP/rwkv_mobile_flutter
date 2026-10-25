@@ -21,6 +21,12 @@
 
 ### Pinned native release
 
+The desktop update `4.8.6-native.2` pins the qualified M4 Pro MLX kernels and
+the Windows static-GGML/CUDA runtime cohort. Platform source commits remain
+explicit because the macOS CI build predates a Windows-only CMake guard fix.
+Successful model loads log `[RWKVModelLoadTiming]` with backend, model ID and
+load duration in microseconds, including native initialization and polling.
+
 `native-libraries.json` records the RWKV-APP native fork commit, immutable
 release tag, archive checksums and installed-file checksums. The legacy-named
 `fetch_latest_libraries.sh` and `.ps1` now restore that exact release. They do
@@ -46,7 +52,7 @@ this selection; archive and member checksums are checked before installation.
 Flutter then packages the installed libraries from their normal platform paths.
 Keep the archive and source inventory while this checkout consumes the build.
 Remove the local selection to restore the immutable release with the same tool.
-Windows x64 local builds may additionally declare `Release/cublas64_13.dll`,
+Windows x64 cohorts may additionally declare `Release/cublas64_13.dll`,
 `Release/cublasLt64_13.dll` and `Release/cudart64_13.dll` under `windows/`.
 The fetch tool generates the ignored `windows/native-runtime-libraries.txt`
 from the selected cohort. Standard Flutter packaging consumes this list, so
