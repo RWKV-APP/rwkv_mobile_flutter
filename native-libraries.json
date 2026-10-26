@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
   "repository": "RWKV-APP/rwkv-mobile",
-  "tag": "4.8.6-native.2",
-  "commit": "7683ac9bf34b06b59521ffcf8059f4776f91577f",
+  "tag": "4.9.0-native.1",
+  "commit": "ae3ca4b97ad8d33710f6e9e4f338458b8f84ff10",
   "palmCommit": "a03fcf7a46ab334ada5b8b32bad83e03a1306cb2",
   "mlxCommit": "bac606b67b6928206f013a38e1f87962455b2052",
   "platforms": {
     "android": {
-      "archive": "librwkv_mobile-4a45987-aarch64-android-ndk-r28c.zip",
-      "sha256": "de76869a12d99380c49c5f6c0623ffd7247a6a961efa14670e54f05d07f59689",
+      "archive": "librwkv_mobile-ae3ca4b-aarch64-android-ndk-r28c.zip",
+      "sha256": "00ff5c007728b596d021c239fc2c02b15c52aa248f0c9e0be0638dc0fc7c5fa3",
       "files": {
         "librwkv_mobile.so": {
           "path": "android/src/main/jniLibs/arm64-v8a/librwkv_mobile.so",
-          "size": 35531592,
-          "sha256": "595b57d409a18a24bda0203ea53cd8f78ffe6b676f01e6145c1b0c97039a21a6"
+          "size": 35540808,
+          "sha256": "b38c449a259470440cd59bfd1f254eed0962793a8193c49619b75eab93cb6b77"
         },
         "librwkv_mtk_np7.so": {
           "path": "android/src/main/jniLibs/arm64-v8a/librwkv_mtk_np7.so",
@@ -28,9 +28,9 @@
       },
       "source": {
         "repository": "RWKV-APP/rwkv-mobile",
-        "tag": "4.8.6-native.1",
-        "commit": "4a459879525edf7948e0624b69448983f432d725",
-        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/39296519853"
+        "tag": "4.9.0-native.1",
+        "commit": "ae3ca4b97ad8d33710f6e9e4f338458b8f84ff10",
+        "workflowRun": "https://github.com/RWKV-APP/rwkv-mobile/actions/runs/40281380818"
       }
     },
     "ios": {

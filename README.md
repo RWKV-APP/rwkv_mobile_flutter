@@ -21,9 +21,12 @@
 
 ### Pinned native release
 
-The desktop update `4.8.6-native.2` pins the qualified M4 Pro MLX kernels and
-the Windows static-GGML/CUDA runtime cohort. Platform source commits remain
-explicit because the macOS CI build predates a Windows-only CMake guard fix.
+The Android update `4.9.0-native.1` pins the accepted CPU thread/FPCR and WKV
+kernel optimizations and QNN resource-lifecycle fixes. The published package
+passes Android CPU full-logit, state-replay and caller-state restoration checks.
+Other platforms retain their qualified artifacts, including the M4 Pro MLX
+kernels and Windows static-GGML/CUDA runtime cohort from `4.8.6-native.2`.
+Each platform records its own source commit and immutable release tag.
 Successful model loads log `[RWKVModelLoadTiming]` with backend, model ID and
 load duration in microseconds, including native initialization and polling.
 
